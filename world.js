@@ -2,35 +2,40 @@
 document.addEventListener("DOMContentLoaded", function () {
 
     const button = document.getElementById("lookup");
+    const citiesButton = document.getElementById("lookup-cities");
     const countryInput = document.getElementById("country");
     const result = document.getElementById("result");
+
+    function lookup(country, lookupType) {
+
+        fetch("world.php?country=" + encodeURIComponent(country) +
+              "&lookup=" + lookupType)
+
+            .then(response => response.text())
+
+            .then(data => {
+                result.innerHTML = data;
+            })
+
+            .catch(error => {
+                console.log(error);
+                result.textContent = "Error retrieving information.";
+            });
+    }
 
     button.addEventListener("click", function () {
 
         const country = countryInput.value;
 
-        // Send AJAX request to world.php
-        fetch("/info2180-lab5/world.php?country=" + encodeURIComponent(country))
+        lookup(country, "countries");
 
-            .then(response => {
-                console.log("Response status:", response.status);
+    });
 
-                if (!response.ok) {
-                    throw new Error("HTTP error: " + response.status);
-                }
+    citiesButton.addEventListener("click", function () {
 
-                return response.text();
-            })
+        const country = countryInput.value;
 
-            .then(data => {
-                console.log("Data received:", data);
-                result.innerHTML = data;
-            })
-
-            .catch(error => {
-                console.error("Fetch error:", error);
-                result.textContent = "Error retrieving country information.";
-            });
+        lookup(country, "cities");
 
     });
 
