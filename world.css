@@ -1,1 +1,131 @@
+
+/* General page styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f7fa;
+    color: #333;
+}
+
+/* Header styling */
+header {
+    background-color: #35445a;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 30px;
+}
+
+/* Main content */
+main {
+    width: 80%;
+    max-width: 900px;
+    margin: 40px auto;
+    text-align: center;
+}
+
+/* Search controls */
+#controls {
+    margin-bottom: 25px;
+}
+
+#controls label {
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+#country {
+    width: 55%;
+    max-width: 400px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+/* Button styling */
+button {
+    background-color: #3498a8;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    margin-left: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button:hover {
+    background-color: #287b89;
+}
+
+/* Results section */
+#result {
+    margin-top: 25px;
+    text-align: left;
+}
+
+/* Country list */
+#result ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#result li {
+    background-color: white;
+    padding: 15px;
+    margin-bottom: 8px;
+    border-radius: 5px;
+    border: 1px solid #e0e0e0;
+}
+
+/* Table styling for Exercise 4 and 5 */
+#result table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    margin-top: 20px;
+}
+
+#result th {
+    background-color: #35445a;
+    color: white;
+    padding: 12px;
+    text-align: left;
+}
+
+#result td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+#result tr:nth-child(even) {
+    background-color: #f2f5f8;
+}
+
+#result tr:hover {
+    background-color: #e5eef5;
+}
+
+/* Responsive design */
+@media screen and (max-width: 600px) {
+    main {
+        width: 95%;
+    }
+
+    #country {
+        width: 90%;
+        margin: 10px 0;
+    }
+
+    button {
+        margin: 5px;
+    }
+}
 /* Add your own styles */
