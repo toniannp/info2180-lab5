@@ -18,10 +18,20 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 
-<ul>
-<?php foreach ($results as $row): ?>
-    <li>
-        <?= htmlspecialchars($row['name']) . ' is ruled by ' . htmlspecialchars($row['head_of_state'] ?? 'Unknown'); ?>
-    </li>
-<?php endforeach; ?>
-</ul>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Continent</th>
+        <th>Independence</th>
+        <th>Head of State</th>
+    </tr>
+
+    <?php foreach ($results as $row): ?>
+        <tr>
+            <td><?= htmlspecialchars($row['name']); ?></td>
+            <td><?= htmlspecialchars($row['continent']); ?></td>
+            <td><?= htmlspecialchars($row['independence_year'] ?? ''); ?></td>
+            <td><?= htmlspecialchars($row['head_of_state'] ?? ''); ?></td>
+        </tr>
+    <?php endforeach; ?>
+</table>
